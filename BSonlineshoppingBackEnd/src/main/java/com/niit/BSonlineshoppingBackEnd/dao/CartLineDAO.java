@@ -2,6 +2,7 @@ package com.niit.BSonlineshoppingBackEnd.dao;
 
 import java.util.List;
 
+import com.niit.BSonlineshoppingBackEnd.dto.Cart;
 import com.niit.BSonlineshoppingBackEnd.dto.CartLine;
 
 public interface CartLineDAO {
@@ -18,7 +19,8 @@ public interface CartLineDAO {
 	public List<CartLine> listAvailable(int cartId);
 	public CartLine getByCartAndProduct(int cartId, int productId);
 	
-	
+	//update a cart
+	boolean updateCart(Cart cart);
 	
 	
 }
