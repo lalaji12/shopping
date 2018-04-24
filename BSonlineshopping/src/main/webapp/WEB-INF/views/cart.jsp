@@ -1,16 +1,16 @@
-
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="container">
 
 	<c:if test="${not empty message}">
 
-		<div class="alert alert-info">
+		<div class="alert alert-infor">
 
 			<h3 class="text-center">${message}</h3>
+
 
 		</div>
 
 	</c:if>
+
 
 	<c:choose>
 
@@ -28,8 +28,8 @@
 				</thead>
 				<tbody>
 
-
 					<c:forEach items="${cartLines}" var="cartLine">
+
 						<tr>
 							<td data-th="Product">
 								<div class="row">
@@ -39,20 +39,27 @@
 									</div>
 									<div class="col-sm-10">
 										<h4 class="nomargin">${cartLine.product.name}
-											<c:if test="${cartLine.available == false }">
-												<strong class="unavailable">(Not Available)</strong>
-											</c:if>
-										</h4>
 
-										<p>Description- ${cartLine.product.description}</p>
+											<c:if test="${cartLine.available == false}">
+
+												<strong class="unavailable">(Not Available)</strong>
+
+											</c:if>
+
+										</h4>
+										<p>Brand - ${cartLine.product.brand}</p>
+										<p>Description - ${cartLine.product.description}</p>
 									</div>
 								</div>
 							</td>
 							<td data-th="Price">&#8377; ${cartLine.buyingPrice}</td>
 							<td data-th="Quantity"><input type="number"
-								id="count_${cartLine.id}" min="1" max="3"
+								id="count_${cartLine.id}" min="1" max="5"
 								class="form-control text-center"
 								value="${cartLine.productCount}"></td>
+
+
+
 							<td data-th="Subtotal" class="text-center">&#8377;
 								${cartLine.total}</td>
 							<td class="actions" data-th="">
@@ -63,9 +70,13 @@
 								class="btn btn-danger btn-sm"><span
 									class="glyphicon glyphicon-trash"></span></a>
 							</td>
+
 						</tr>
 
+
 					</c:forEach>
+
+
 
 				</tbody>
 				<tfoot>
@@ -93,19 +104,19 @@
 		<c:otherwise>
 
 			<div class="jumbotron">
-
 				<div class="text-center">
-
 
 					<h1>Your cart is empty!</h1>
 
 				</div>
+
 
 			</div>
 
 		</c:otherwise>
 
 	</c:choose>
+
 
 
 
