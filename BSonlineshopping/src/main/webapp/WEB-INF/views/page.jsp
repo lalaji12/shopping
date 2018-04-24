@@ -98,6 +98,14 @@
 
 			</c:if>
 
+			<!-- Load only when user clicks manage products -->
+			<c:if test="${userClickShowCart==true}">
+				<%@include file="cart.jsp"%>
+
+			</c:if>
+
+
+
 		</div>
 
 		<!-- Footer comes here -->
