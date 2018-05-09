@@ -99,11 +99,25 @@
 			</c:if>
 
 			<!-- Load only when user clicks manage products -->
+			<c:if test="${userClickSupplierDetails==true}">
+				<%@include file="supplierDetails.jsp"%>
+
+			</c:if>
+
+
+
+			<!-- Load only when user clicks manage products -->
 			<c:if test="${userClickShowCart==true}">
 				<%@include file="cart.jsp"%>
 
 			</c:if>
 
+
+			<!-- Load only when user clicks checkout -->
+			<c:if test="${userClickCheckout==true}">
+				<%@include file="thankyou.jsp"%>
+
+			</c:if>
 
 
 		</div>

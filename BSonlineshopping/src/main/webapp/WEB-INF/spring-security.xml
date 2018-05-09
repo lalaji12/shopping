@@ -21,11 +21,15 @@
 	<http>
 
 		<!-- only Admin access -->
-		<intercept-url pattern="/manage/**" access="hasAuthority('ADMIN')" />
+		<intercept-url pattern="/manage/supplier/**" access="hasAuthority('ADMIN')" />
 
 		<!-- only user access (who is registered) -->
 		<intercept-url pattern="/cart/**" access="hasAuthority('USER')" />
 
+		<!-- only user access (who is registered) -->
+		<intercept-url pattern="/cart/**" access="hasAuthority('SUPPLIER')" />
+		
+		
 		<!-- rest of the world -->
 		<intercept-url pattern="/**" access="permitAll" />
 		<form-login login-page="/login" />

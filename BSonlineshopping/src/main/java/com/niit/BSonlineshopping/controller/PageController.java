@@ -205,4 +205,19 @@ public class PageController {
 		return "redirect:/login?logout";
 	}
 
+	
+	
+	@RequestMapping(value = "/thankyou")
+	public ModelAndView thankyou() {
+
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Checkout");
+		mv.addObject("userClickCheckout", true);
+
+		return mv;
+	}
+
+	
+	
+	
 }

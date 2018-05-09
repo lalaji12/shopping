@@ -26,6 +26,16 @@
 						href="${contextRoot}/manage/products">Manage Products</a></li>
 				</security:authorize>
 
+				<security:authorize access="hasAuthority('ADMIN')">
+
+					<li id="supplierDetails"><a
+						href="${contextRoot}/supplier/details">Supplier Details </a></li>
+				</security:authorize>
+
+
+
+
+
 				<li id="contact"><a href="${contextRoot}/contact">Contact</a></li>
 			</ul>
 
@@ -41,11 +51,9 @@
 
 				<security:authorize access="isAuthenticated()">
 
-					<li class="dropdown" id="userCart">
-					
-					<a href="javascript:void(0)"
-						class="btn btn-default dropdown-toggle" id="dropdownMenu1"
-						data-toggle="dropdown">${userModel.fullName}<span
+					<li class="dropdown" id="userCart"><a
+						href="javascript:void(0)" class="btn btn-default dropdown-toggle"
+						id="dropdownMenu1" data-toggle="dropdown">${userModel.fullName}<span
 							class="caret"></span>
 					</a>
 

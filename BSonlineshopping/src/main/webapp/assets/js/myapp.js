@@ -19,6 +19,7 @@ $(function() {
 		$('#manageProducts').addClass('active');
 		break;
 
+	
 	case 'User Cart':
 		$('#userCart').addClass('active');
 		break;
